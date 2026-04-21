@@ -1,0 +1,63 @@
+<div style="max-width: 680px; margin: 1.5rem auto; background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; font-family: inherit;">
+
+  <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid #e5e7eb;">
+    <p style="margin: 0; font-size: 15px; font-weight: 500;">Nouvel article</p>
+    <p style="margin: 4px 0 0; font-size: 13px; color: #6b7280;">Remplissez les informations du produit</p>
+  </div>
+
+  <div style="padding: 1.5rem;">
+    <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+
+      <div style="display: flex; gap: 1rem; align-items: flex-end; margin-bottom: 1.25rem;">
+
+        <div style="flex: 2;">
+          <label for="name" style="display: block; font-size: 12px; font-weight: 500; color: #6b7280; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em;">Nom</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            placeholder="ex. Chaise ergonomique"
+            style="width: 100%; box-sizing: border-box; padding: 10px 12px; font-size: 15px; border: 1px solid #d1d5db; border-radius: 8px; background: #f9fafb; outline: none;"
+          />
+        </div>
+
+        <div style="flex: 1;">
+          <label for="price" style="display: block; font-size: 12px; font-weight: 500; color: #6b7280; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em;">Prix</label>
+          <div style="display: flex; align-items: center; border: 1px solid #d1d5db; border-radius: 8px; background: #f9fafb; overflow: hidden;">
+            <span style="padding: 10px 12px; font-size: 14px; color: #6b7280; border-right: 1px solid #e5e7eb;">$</span>
+            <input
+              id="price"
+              type="number"
+              formControlName="price"
+              min="0"
+              step="0.01"
+              style="width: 100%; border: none; background: transparent; padding: 10px 12px; font-size: 15px; outline: none;"
+            />
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding-bottom: 2px;">
+          <label for="selected" style="font-size: 12px; font-weight: 500; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap;">Sélectionné</label>
+          <div class="form-check form-switch mb-0">
+            <input
+              id="selected"
+              type="checkbox"
+              class="form-check-input"
+              role="switch"
+              formControlName="selected"
+              style="width: 44px; height: 24px; cursor: pointer;"
+            />
+          </div>
+        </div>
+
+      </div>
+
+      <button
+        type="submit"
+        style="width: 100%; padding: 11px; font-size: 15px; font-weight: 500; background: #111827; color: white; border: none; border-radius: 8px; cursor: pointer;">
+        Valider
+      </button>
+
+    </form>
+  </div>
+</div>
